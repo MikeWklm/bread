@@ -1,3 +1,4 @@
+"""Streamlit app for sourdough bread recipes."""
 import streamlit as st
 
 from bread import BreadRecipe
@@ -5,6 +6,11 @@ from bread import BreadRecipe
 st.header('Bake a nice Sourdough Bread!')
 
 def get_recipe(recipe_type: str) -> None:
+    """Put recipe to session state from a given form.
+
+    Args:
+        recipe_type (str): absolute or relative recipe
+    """
     if recipe_type == "abs":
         recipe = BreadRecipe(
             sourdough=st.session_state.abs_sourdough,

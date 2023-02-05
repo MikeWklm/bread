@@ -3,6 +3,7 @@ from typing import Optional
 
 @dataclass
 class BreadRecipe:
+    """A sourdough bread recipe."""
     sourdough: Optional[int] = None
     wheat: Optional[int] = None
     full_wheat: Optional[int] = None
