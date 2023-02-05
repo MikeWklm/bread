@@ -29,12 +29,12 @@ class BreadRecipe:
         if self.salt is None:
             self.salt = self.total_wheat * self.salt_bp - self.total_wheat
         else:
-            self.salt_bp = self.salt / self.total_wheat
+            self.salt_bp = 1 + self.salt / self.total_wheat
         if self.water is None:
             total_water = self.total_wheat * self.water_bp - self.total_wheat
             self.water = total_water - self.sourdough * .5
         else:
-            self.water_bp = (self.water + self.sourdough * .5) / self.total_wheat
+            self.water_bp = 1 + (self.water + self.sourdough * .5) / self.total_wheat
         self.total_water = self.sourdough * .5 + self.water
         
         self.total_weight = self.total_water + self.total_wheat + self.salt
